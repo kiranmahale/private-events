@@ -1,0 +1,18 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  date_of: <%= Date.today %>
+  user: michael
+
+two:
+  description: MyString
+  date_of: <%= Date..today %>
+  user: michael
+
+most_recent: 
+  description: "Today is my birthday"
+  date_of: <%= Date.today %>
+  user:  michael
+
+

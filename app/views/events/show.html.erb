@@ -1,0 +1,20 @@
+<h1>Event Information</h1>
+<div class="row">
+	<aside class="col-md-4">
+		<section class="user_info" >
+
+			<%= image_tag "feteam.png" %>
+			<h4> Title:<%= @event.title %> </h4>
+			<h4> Date: <%= @event.date_of %></h4>
+			<h4><%= link_to "who created the event?", @event.creator %></h4>
+			<p>Description: <%= @event.description %></p>
+			<h2>Invite people</h2>
+			
+			<% @uninvited.each do |user| %>
+			<h3><%= user.name %></h3>
+			<span class="float:right"><%= link_to "Invite",invite_path(info: {user_id: user.id, event_id: @event.id}), method: :post %></span>
+			<% end %>
+
+		</section>
+	</aside>
+</div>

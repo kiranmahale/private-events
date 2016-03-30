@@ -1,0 +1,15 @@
+<ol><h2>My Upcoming Events</h2>
+<% if @Uevents.any?  %>
+	<%= render @Uevents %>
+<% else %>
+	<p class="faint">Sorry, you don't have any upcoming events</p>
+<% end  %>
+<hr>
+<h2>My Past Events</h2>
+<% if @Pevents.any? %>
+	<%= render @Pevents %>
+<% else %>
+	<p class="faint">Sorry, you don't have any past events</p>
+<% end %>
+
+</ol>

@@ -1,0 +1,7 @@
+ <li>
+      
+      <%= link_to user.name, user %>
+      
+    | <%= link_to "invite", invite_path(info: {user_id: user.id,event_id: @event.id}), method: :post  %>
+  		
+    </li>

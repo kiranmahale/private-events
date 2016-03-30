@@ -1,0 +1,36 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+	<div class="container">
+	<div class="col-md-6">
+		<%= link_to root_url  do %>
+			<%= image_tag "marker.png", class: "logo" %>
+		<% end %>
+		</div>
+		<div class="col-md-6">
+		<nav>
+			<ul class="nav navbar-nav navbar-right">
+				<li><%= link_to "HOME", root_path %> </li>
+				<% if logged_in? %>
+                <li><%= link_to "My Events", allevents_path %></li>
+          			
+                <li><%= link_to "Create Event", new_event_path %></li>
+          			<li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%= current_user.name %> <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile", current_user %></li>
+              <li><%= link_to "Settings", '#' %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to "Log out", logout_path, method: "delete" %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "Log in", login_path %></li>
+        <% end %>
+			</ul>
+		</nav>
+		</div>
+	</div>
+</header>

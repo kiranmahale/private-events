@@ -1,0 +1,29 @@
+<div class="row">
+	<aside class="col-md-4">
+		<section class="user_info" >
+			<h1><%= @user.name %></h1>
+		</section>
+	</aside>
+	</div>
+	<div class="row">
+	<div class="col-md-8">
+		<ol class="microposts">
+		<h1>My Created Events</h1>
+		
+		<% if @user.created_events.any? %>
+			<%= render @user.created_events %>
+			<% else %>
+			<p>Sorry You have not created any event</p>
+			<% end %>
+		</ol>
+		<ol class="microposts">
+		<h1>Invitation for Events</h1>
+
+			<% if @user.attended_events.any?  %>
+			<%= render @user.attended_events %>
+			<% else %>
+			<p>Sorry no attended events</p>
+			<% end %>
+		</ol>
+	</div>
+</div>
